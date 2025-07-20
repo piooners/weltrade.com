@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>reCAPTCHA</title>
+<style type="text/css">
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(//fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="bframe_data/styles__ltr.css">
+<script nonce="" type="text/javascript">window['__recaptcha_api'] = 'https://recaptcha.net/recaptcha/api2/';</script>
+<script type="text/javascript" src="recaptcha__id_002.js" nonce="">
+      
+    </script></head>
+<body><input type="hidden" id="recaptcha-token" value="03AFcWeA4TNDNPQ1a94UtVbhMFZHbGr5-6BHmkneCQqN3r24b51h5fp_Cwi2sTjHqqNPrgKTh-rCAvV_5t355ObQyseIIqme9mkhE91PZpsLji6MwwVrYAIcdHwSX50ycxUCcTkWBQ8jPkfpabxCc-4w64ZtzbfH_o15GHLvS4k2bBjaf6jLwRhYmrL7adYiqtSl_c17ZWcAykOHCDrqBThw_DWRC0A7pVfRT_NB7MbESlioDPyNdfZt6Q9Ieqw_kcGr4rQe3E3DwgeNuf0VLuqWyF-RigI-XSWekCiMVDzR6HeE9f9_no-sAoZ6IMAzPEme2BZ-z0Vh0zApmfkTqwJYyCCPs_S4Yb0EdfhwU7GdVBcAq9mSPw4Z4EiuPM3x70es5mcyEM3lq7RWyGg-JWCrF2jpeBE8fyaGoDcZaf47dr9fnkhs1Dnm-w7hMh40w4VhoMOaM1_Mjev8HBTXKW28gHi-eh6GwOqrG2O1zy03ztIZXCLnLDk5DkgF-pIelTk2QhOhPJnA7BoyFFyK5t-ermpOPpdtqhhXLTbEzIWx5GwHxadkb2HXWaqfGFFqLhfnnQ0hKd2vJAaCDqzgaWHlsPa9rtNtzvbJfqCe3vs6aYQkbCjt79TZ1n-oLKe6tWFhOsHyos0v2CVfA6V6L_AZg6oAUJIqWw9ibSian6-C_weFceehr0rQc6SRDHlFzusFDbNHG4eoVp-iu1LFx3nHnCRU13ZT2T600DDtb4lebIHoylxDz80qtazE4eYofk58hKrd1303RKvbVB7IODHj9kaZzTjLAqItL-SuOHad7ouiBaNeUX_P8QQ8XZVR29Bya9OcRgWruCDgzHSo62Vu93eq3wHGWvH4zmeczBeMYQ8ptrIpPZPHhiKc0bLJjvkZlStXnU7Z88pm-7-3Lvv1TlHKbSNE4phg1yPVTafKHI7dHo3v9nn1lOtMg82XVcySoYLl2spVN_zTWnVs-sqI3jlw24_rfYsOfpEIcVb4XdKVpySVEng8WfyDqTpY1Zvg2sIkUQImTXs7cI0K2kZX0gSGLDMLYNo3VVfY2gKO13x5_ue0DHx5EKQ4Nz3YgnikePHpHsFdoRIXOt_fBkhJjzYyosApHCc5G0aq2G9koHTW0YevgCC0M0QQIQIoTmXiNXunscMnSPqFYLRVfR_X3K8p7Vk1jZlAjWYUeDb2B5BRi0Nm9DWG6j4KBc_s7jf49KuyJEvgVHfkr97pWYr1E0Nork7Ew4WKplRScMJSxAB3VHcfxs5TAof2olCiBKd0lx1ezmYqrGLdwMzIApYZmqvQvbFACZFmP3-8ioftsz3pz9_B8dJKe4g8Z8YfRN5s8OzFTnxHGqDjIpAoY7UAHwLqTJZ29yaZPqYAZfJ9XQrdVgkpWJfv66nqkxOc9hvkOnc3DsvpfcRxkISs9nVZtpXUVxOZMBXF0XFWE8ycoNr0TEGVAViq_NcybwNdJVclZ5NN9fDSl_eC4zjY6njfLoMBZzSngtLWbCy20wW0QMxxTxhSgWJOtYHAHjtqQ89ECBuhVTa00xZxVONySuEr-A-io_Iayv_0CDpkQ9a9rpkqr4Yn-lca1Al5WXA2taG20QkKUyXMofM2_agqis1YpGF-hqjKsBT743KhroU6Q80bA67OJGSKtUU2x4FdLHefWrLDI2Ps3eVCH_9vivTQGa6byRvwaDrc4nNFxs9su-qhBpdcJJwm9ytnyspcT2Y1k7MRQLXgcb-QMM8hd2qQPPFTqzc4HOMkoR6tJY5TvzTR8bO6nRcTWh5yRD77slAL1rEqcXSsCVEtDRh4SD-A8hZKfK4dUBTzIzds85iX2Uwb1730XRir-ZgIKtwtqfjUdaczySxonDz9C2Cnw6sYA2qaE99lYLu3kCCNUH6df7redknI66vCdSvrLcGhbY-EWascBK4AXN9_FmUvRG0BYt5jqxHWuWUgzW5n1Z-D0ceNqlEIBN4L7jw2-ka9Yt2BkE6BLpBga-_etwUo4zFnWzu4BvUw_dryQte2CuMyex2PLrkXM25u0Cpes0UyP1KezWKIwIoB5qQoarAkgocP6CbEqAFJsMhTlyiP9H9R6no_LINu75T1jALMDKll7hnOoWF-kxvsl1TSZHS877tkrZYapbqugxjw7HmHUdeXtptEL7zTeJTUg-coaNAfMmmtidaNnEswfGhDtxQvoNm2qVMQZF-ReD3l1JX3J7nbixiyazVcY7P1RmAKl7mvYCQCrmsI2iG6PHwVaTMHGj_HFCaAzEu--17BorpSDKJGYLlBWhb7gjciH1RTPxPeV-pz3JsWLUw-XJIfEmSd3d6L_2pBHS48gAc9DeDtBKG6Sr4hBA18xXwEg7n000r69K7VYzWLsIpsYKRAIs9-DdXhRIqRgJveSc8ONEeSSgWfAx4YKdzjhw8Fj2TS42LPSjamcboQd4-MSZPylV0pBJ0g_Mipt2iwb1kCJP7YlUd9EeXRnTcax6DUgEezMu2q33wHQ49BKtAfp2PDbNaWaiDQnmT4D6cZLwqwKV35KVwLAWr_Ll8ec3lYa60ea7urI6FSOTCesR2w62wGbgAWVfIBm-z0dvRKwDRbuoO8_ElUPm7GW09VwSdKDNW8qPKgglgZcV47Uw_Goi3VKdfMQjZJc7SfPrDHjnH7fgBheJDQDwrbDuTZCGcWtDEnE8LI45ks0X54JlI6fi8sOC6TVs2dl6KpM0N72LsfkhrWzAXjpdwX6NzmkOYzwkQIXS3QZWot6Im3yXLqZPq-IUtcyLkgqVQmte0jIJLoV00Hqnxg6wpXvFYK0zNnBdBhfBvbOOXpewwDloZRJVcBE8Jza5_zNFsxeUAX1zyKC4-Q20wiwMs6BNh2JFr-aSdGObDMP0fOJfPUm-SvSyV-SFiZky-CiOnTjoHyela6-a0jDu4uU2vtnUCEtB1xuy9PJr-2CLl-r0fOQ673bcZvoH_Hq-nTv1WsroHw2-OINI8YNu7lbBLJ5vQT_9-dfymG3Lt6o3tMM5JQDZmBbLIkBHU4Z3Bpvj5HOj5jJUE_awu4WjQ5oyHOdo3ItnM_UhBn7slEw61eZ4p37Hn5IicWWPvGxhSHGB7WPj5MjHJeGTS1eMnZOdewfQbtrvr_Qwj8gRiMZgV8IkTZF6Uf8qOwpo_kT8W0hGS071Uq7ETEp9dVxO_eX92vXBxm0wOAKn8vwQ9SjbWn0k9c27KiyqWmve5F9HkWHROZVDDqKl5n638Sx1swjQncjzKw7JgvKbOduzNZmz2FwQGCXagMb6tUWn8aJTZTWtz6Dp1HPrbDcTQHMRZepiUgH6Avf7qDNJIShk8n1_h86W6hFbgPQLcFiQrunYhBmv9ranpclU28jDvInFh-p99FsfsOperfdsJFw1-x5rgT9-BF_I5tOXPbktSdtXGo91SZc6KlKYIfVEiC1W1Kjgh7ev5HiuN66k-ZBg5hi3VSqyZ0CT0Hkz9ynP8JoRonlcwaCxK2LLZuLfU3NMPdk9j3R5sUyTziLEzgjlmGpxz3BwEv7veWXub1IdGCuXU2vwOg4PCVi0hH1LWw7xsr0sVhQKsgohJ4_ziWwoUR4wSiPPMrZsEzDZpoQ7EKHk5l2whAhZzaUSuQXAycU_Ef8oPWcyVX7-8gP_CWaW0sMx0MrEupourZmx2kAlHgwt-aJ2VM4HBp8dbmWlWCnzmLCsahyH4cQIM1CsOe6Vjc7SiNV9KzCOEZazoJmEOONCd-tGK2I-ZWsbM7_WiPWUNrDB7s-KsydhftBm3scnyPWNDSQMNZQ72Bp9YA0YrzTJvMKcDQIQcinqM1IGRsr2IRtpaNCfn3bSXk6Wnn6gOGzh1xAo3F1MXs9rWUTxDyDE8LjhGK95qsff2EkkxqVg6ahYk-4HE6NUDrAamrhl5ldtdbFqEmmXtOUhmmCfBLqPBY0gdP45t5fp5_CI4YPBM7aUzFqbdyNKDueRft7efoit-0tQJ9o3u-FOiwoOinicqqy6wkxhRXvb-cLYr7CHSa8xFSh8-w0qhVh9idvMxA3jXmmivIZvIObP_JvbElNLxjZaUIYEUVXZsogkLIiqKUhcj5_tP4TdxIY8EIY7W-dQ-cX9-DlQd0S9UBygpla5q0fEIHedktk-Tl3SqLVOMn0QOTobLnQRo-34PskRME5T8oCZ94waQoL6np-n6icc3-7S05KPn3OiJUFn3uriC5OsIXhJnhLLDTFFlqE7_44-F3YcDHqTghos8KuBwho4CoNPjUe7KwxgfU1qteeOXG6TwbS4wUNHt5KBb0IbnWu0_8SiAhg7uiRop9PdkjebwKTSnOgZfJvvCNJ-k9zthfB09SuX0_earvB_TaSbXEZVFVdW0t7ZUv6Iza0M5q1roWxMLxoXXUn_075aLfdM_8QSCLtIlxK76tIJUBKpb32Sr37hedqQtIzyi-6mZmUwhStSiVfq5UIvIWgvzYFNffULaJdgMDRysS9AEM2Vypygizv5_A-SKjDVKiRplJA96oIEtV--N2rlBeQBqY9jQKWXys4KzaK_rEsZkV-_ZdGUHdGEkgNLTC13i--JJJUp-KCclIewZmdeP86lWjCZsTEX3-WQ4GDNPjUGkVpUWyKcTBGLLXw4lGR3FbHuKii2bHffn4p3dtDzgdECZA3hSnY8kHNt5bSdJXVqRxyFNqTWMg5OT-sHm3XlNcW8roT1yaYxcEFMh9bpN6-v2Oc37lCuPHPl9n76PIXxVQkCdPUztbUSAb1-SfE2tyiM6-Gy1uThTyIuAvcKGet64wmRF79yS24thjetY9zb9KJbpPmvUM_bHsgadbQHmDGEOgojA7Q3S8Tpv6LeEr03XrkMktmpJ1-gMie6G9Yc6wehbg2u58HzVYQtF6SM_cEg8hMG9cakW34MoHmCcNVzx88yxhHSFopUHLA8kgExPHg9GP9HfJ_jce2ZptrQ4_If2VtLPt70Mg8kKe8QHFLCFln8PBmb7DtPiOWFlGccqkN5KBZOanRRscKjJDUUPCFuC8OSOdUmXgzsQSAVUPU__97QVJEuQ8ZvN44ZTlWNUIs9emCQXukKM4lYwlLaG9XR8sw6Iy40NP0ir6ASODi6DNsNqBSE6wf0JVXS83Tq7eQZ76DWsrzxGhAYoLPq30PwG9WJJ-zV0Bve-_rB51RfmuNzCeLpuiEDDKnygmYT3l_HIhS2etWwNHnRawzY8DeXpdzP1g0CCUvzOlDeo7y_z7rmBkITDStKkhgnOA3NjEB72VFE4ZsqFf_r8H6WaPdQvw_EDM_F3phNrruQ2jHYFauoHfCiIQEfP1O_GsgUz6zLqztDS1mpTNklgW29myT6VvkYtmxv0JqoNP-g3GDVRZB20svoP3Q2I6KIE1FXy50ZnD4nBU7glXo2QpjEj8DckT2YX8pX94mwuZvgnjd17gOmovDZV2ywMrGs5GB3Rgo0AVYl9KfuhrZCh9ZweO2xJeFQFI2Eh4uwHNNHvP8COmJz637XAUNjAVm3XnQ">
+<script type="text/javascript" nonce="">
+      
+        recaptcha.frame.Main.init("[\x22finput\x22,null,[\x22conf\x22,null,\x226Lf0G5YUAAAAAP570J9BvJiAZ3r5_XHrJXidyrfH\x22,0,null,null,0.75,null,[21,125,63,73,95,87,41,43,42,83,102,105,109,121],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0]]");
+      
+    </script><div></div><div style=""><div id="rc-imageselect" aria-modal="true" role="dialog"><div class="rc-imageselect-response-field"></div><span class="rc-imageselect-tabloop-begin" tabindex="0"></span><div class="rc-imageselect-payload"><div class="rc-imageselect-instructions"><div class="rc-imageselect-desc-wrapper"><div class="rc-imageselect-desc-no-canonical" style="width: 352px; font-size: 16px;">Pilih semua gambar dengan <strong style="font-size: 28px;">sepeda</strong></div></div><div class="rc-imageselect-progress"></div></div><div class="rc-imageselect-challenge"><div id="rc-imageselect-target" class="rc-imageselect-target" dir="ltr" role="presentation" aria-hidden="true"><table class="rc-imageselect-table-33"><tbody><tr><td role="button" tabindex="4" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:0%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="5" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:0%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="6" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:0%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="7" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:-100%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="8" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:-100%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="9" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:-100%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr><tr><td role="button" tabindex="10" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:-200%; left: 0%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="11" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:-200%; left: -100%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td><td role="button" tabindex="12" class="rc-imageselect-tile" aria-label="Tantangan gambar"><div class="rc-image-tile-target"><div class="rc-image-tile-wrapper" style="width: 126px; height: 126px"><img class="rc-image-tile-33" src="bframe_data/payload.jpeg" alt="" style="top:-200%; left: -200%"><div class="rc-image-tile-overlay"></div></div><div class="rc-imageselect-checkbox"></div></div></td></tr></tbody></table></div></div><div class="rc-imageselect-incorrect-response" style="display:none">Coba lagi</div><div aria-live="polite"><div class="rc-imageselect-error-select-more" style="display:none">Pilih semua gambar yang cocok.</div><div class="rc-imageselect-error-dynamic-more" style="display:none">Periksa juga gambar yang baru.</div><div class="rc-imageselect-error-select-something" style="display:none">Pilih di sekitar objek atau muat ulang jika tidak ada.</div></div></div><div class="rc-footer"><div class="rc-separator"></div><div class="rc-controls"><div class="primary-controls"><div class="rc-buttons"><div class="button-holder reload-button-holder"><button class="rc-button goog-inline-block rc-button-reload" title="Dapatkan tantangan baru" value="" id="recaptcha-reload-button" tabindex="3"></button></div><div class="button-holder audio-button-holder"><button class="rc-button goog-inline-block rc-button-audio" title="Dapatkan tantangan audio" value="" id="recaptcha-audio-button" tabindex="1"></button></div><div class="button-holder image-button-holder"><button class="rc-button goog-inline-block rc-button-image" title="Dapatkan tantangan visual" value="" style="display: none;" id="recaptcha-image-button" tabindex="0"></button></div><div class="button-holder liveness-button-holder" style="display: none;"></div><div class="button-holder help-button-holder"><button class="rc-button goog-inline-block rc-button-help" title="Bantuan" value="" id="recaptcha-help-button" tabindex="2"></button></div><div class="button-holder undo-button-holder"><button class="rc-button goog-inline-block rc-button-undo" title="Urungkan" value="" style="display: none;" id="recaptcha-undo-button" tabindex="0"></button></div></div><div class="verify-button-holder"><button class="rc-button-default goog-inline-block" title="" value="" id="recaptcha-verify-button" tabindex="0">Verifikasi</button></div></div><div class="rc-challenge-help" style="display:none" tabindex="0"></div></div></div><span class="rc-imageselect-tabloop-end" tabindex="0"></span></div></div></body></html>
